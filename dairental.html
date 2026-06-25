@@ -501,9 +501,13 @@
             <input id="leadQty" name="leadQty" type="number" min="1" required placeholder="Contoh: 25">
           </div>
           <div class="rental-field">
-            <label for="leadDuration">Durasi Sewa</label>
+            <label for="leadDurationValue">Durasi Sewa</label>
+            <input id="leadDurationValue" name="leadDurationValue" type="number" min="1" required placeholder="Contoh: 12">
+          </div>
+          <div class="rental-field">
+            <label for="leadDuration">Skema Sewa</label>
             <select id="leadDuration" name="leadDuration" required>
-              <option value="" selected disabled>Pilih durasi</option>
+              <option value="" selected disabled>Pilih skema</option>
               <option value="Harian">Harian</option>
               <option value="Mingguan">Mingguan</option>
               <option value="Bulanan">Bulanan</option>
