@@ -202,6 +202,18 @@
       }
 
       var formData = new FormData(form);
+      var durationValue = (formData.get("leadDurationValue") || "").toString().trim();
+      var durationScheme = (formData.get("leadDuration") || "").toString().trim();
+      var durationText = "-";
+
+      if (durationValue && durationScheme) {
+        durationText = durationValue + " " + durationScheme;
+      } else if (durationValue) {
+        durationText = durationValue;
+      } else if (durationScheme) {
+        durationText = durationScheme;
+      }
+
       var lines = [
         "Halo DAI Rental, saya ingin request penawaran:",
         "",
@@ -209,7 +221,7 @@
         "Perusahaan: " + (formData.get("leadCompany") || "-"),
         "Perangkat: " + (formData.get("leadDevice") || "-"),
         "Jumlah unit: " + (formData.get("leadQty") || "-"),
-        "Durasi sewa: " + (formData.get("leadDuration") || "-"),
+        "Durasi sewa: " + durationText,
         "Mulai dibutuhkan: " + (formData.get("leadStartDate") || "-"),
         "Catatan: " + (formData.get("leadNotes") || "-")
       ];
